@@ -1,13 +1,47 @@
-# OCSF Mediator Example
+# Restaurant Network System
 
-## Structure
-Pay attention to the three modules:
-1. **client** - a simple client built using JavaFX and OCSF. We use EventBus (which implements the mediator pattern) in order to pass events between classes (in this case: between SimpleClient and PrimaryController.
-2. **server** - a simple server built using OCSF.
-3. **entities** - a shared module where all the entities of the project live.
+A Java-based client-server application designed to manage a network of multiple restaurant branches, built as part of a Software Engineering course (Oct 2024 – Apr 2025).
 
-## Running
-1. Run Maven install **in the parent project**.
-2. Run the server using the exec:java goal in the server module.
-3. Run the client using the javafx:run goal in the client module.
-4. Press the button and see what happens!
+## Project Overview
+
+This project provides a distributed system that supports restaurant operations including order management, delivery services, and customer handling. The backend is built using Java with Hibernate ORM for database interaction, and the frontend uses JavaFX. Communication between client and server is implemented using OCSF framework with the Mediator design pattern to enable modular, event-driven interactions.
+
+## Features
+
+- Multi-restaurant branch management with branch-specific menu and delivery options.
+- Order placement and delivery tracking including customer details and order items.
+- Optimized SQL database schema design with efficient queries for improved performance.
+- Robust concurrency and synchronization handling for supporting multiple users simultaneously.
+- Event-driven UI communication with Mediator pattern using EventBus.
+
+## Technologies Used
+
+- Java 17+, JavaFX, OCSF Framework
+- Hibernate ORM with SQL database (e.g., MySQL, PostgreSQL)
+- Mediator Design Pattern for modular event handling
+- Maven build tool
+- Git version control
+
+## Getting Started
+
+### Prerequisites
+
+- JDK 17 or higher
+- Maven
+- Database server (MySQL/PostgreSQL)
+- IDE such as IntelliJ IDEA or Eclipse
+
+### Installation
+
+- Clone the repository.
+- Configure the database connection in `hibernate.cfg.xml`.
+- Build the project using Maven:
+mvn clean install
+
+
+- Run the server module first, then the client module.
+
+## Usage
+
+- The client application allows users to browse menus, place orders, and track deliveries.
+- The server manages the business logic, database interactions, and multi-threaded user sessions.
